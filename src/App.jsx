@@ -1,9 +1,9 @@
 
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 
 import { CORE_CONCEPTS } from './data';
 import Header from './components/header/Header';
-import CoreConcepts from './components/CoreConcepts';
+import CoreConcept from './components/CoreConcept';
 import TabButton from './components/TabButton';
 import { EXAMPLES } from './data';
 
@@ -19,21 +19,22 @@ function App() {
     <p>{EXAMPLES[selectedItem].description}</p>
     <pre>
       <code>
-      {EXAMPLES[selectedItem].code}
-  </code>
-</pre>
+        {EXAMPLES[selectedItem].code}
+      </code>
+    </pre>
  </div>);
   }
 
   return (
-    <div>
+    //<Fragment>
+    <>
       <Header/>
       <main>
         <h2>Time to get started!</h2>
         <section id='core-concepts'>
           <h2>Core Concepts</h2>
           <ul>
-            {CORE_CONCEPTS.map((concept) => (<CoreConcepts key={concept.title} {...concept}/>))}
+            {CORE_CONCEPTS.map((concept) => (<CoreConcept key={concept.title} {...concept}/>))}
           </ul>
         </section>
         <section id="examples">
@@ -59,7 +60,7 @@ function App() {
             { tabContent }
         </section>
       </main>
-    </div>
+   </>
   );
 
 
