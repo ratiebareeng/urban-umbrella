@@ -1,8 +1,7 @@
-
-import { useState, Fragment } from 'react';
-
 import Header from './components/header/Header';
+import { CORE_CONCEPTS } from './data';
 import CoreConcepts from './components/CoreConcepts';
+import Section from './components/Section';
 import Examples from './components/Examples';
 
 function App() {

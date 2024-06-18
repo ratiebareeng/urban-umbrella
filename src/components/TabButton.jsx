@@ -11,17 +11,3 @@ export default function TabButton({ title, isSelected, ...props }) {
     );
 }
 
-
-// export default function TabButton({ id, title, onClick, active }) {
-//   return (
-//     <li>
-//       <button
-//         id={id}
-//         onClick={onClick}
-//         className={active ? 'active' : ''}
-//       >
-//         {title}
-//       </button>
-//     </li>
-//   );
-// }

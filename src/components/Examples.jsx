@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Section from './Section';
 import TabButton from './TabButton';
+import Tabs from './Tabs';
 import { EXAMPLES } from '../data';
 
 
@@ -24,7 +25,8 @@ if(selectedItem){
 
     return (
         <Section id="examples" title="Examples">
-          <menu>
+          <Tabs buttons={
+            <>
           <TabButton 
           title="Components" 
           isSelected={selectedItem === "components"} 
@@ -41,8 +43,10 @@ if(selectedItem){
           title="State" 
           isSelected={selectedItem === "state"}
           onClick={()=>onClick("state")}></TabButton>
-          </menu>
+          </>
+          }>
             { tabContent }
+          </Tabs>
         </Section>
     );
 
