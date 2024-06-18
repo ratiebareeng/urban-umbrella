@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import Section from './Section';
 import TabButton from './TabButton';
-import EXAMPLES from '../data';
+import { EXAMPLES } from '../data';
 
-const [ selectedItem, setSelectedItem ] = useState('');
+
+export default function Examples(){
+    const [ selectedItem, setSelectedItem ] = useState('');
 
 let tabContent = <p>Please select a topic above</p>;
 
@@ -19,10 +22,8 @@ if(selectedItem){
 </div>);
 }
 
-export default function Examples(){
     return (
-        <section id="examples">
-          <h2>Examples</h2>
+        <Section id="examples" title="Examples">
           <menu>
           <TabButton 
           title="Components" 
@@ -42,6 +43,10 @@ export default function Examples(){
           onClick={()=>onClick("state")}></TabButton>
           </menu>
             { tabContent }
-        </section>
+        </Section>
     );
+
+    function onClick(item){
+      setSelectedItem(item);
+    }
 }
