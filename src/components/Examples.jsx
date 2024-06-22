@@ -25,7 +25,9 @@ if(selectedItem){
 
     return (
         <Section id="examples" title="Examples">
-          <Tabs buttons={
+          <Tabs
+          Container="menu" 
+          buttons={
             <>
           <TabButton 
           title="Components" 
